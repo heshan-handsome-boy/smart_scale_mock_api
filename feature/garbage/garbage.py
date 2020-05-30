@@ -2,7 +2,10 @@ import os
 
 from flask import Blueprint, jsonify, request
 
-garbage_blue_print = Blueprint('garbage', __name__)
+garbage_blue_print = Blueprint('garbage', __name__,
+                               url_prefix='/garbage',
+                               static_folder='static'
+                               )
 
 
 @garbage_blue_print.route('/intelligentScale/yz', methods=['POST', 'GET'])
