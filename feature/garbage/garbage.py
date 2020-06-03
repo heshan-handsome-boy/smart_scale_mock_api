@@ -10,8 +10,8 @@ garbage_blue_print = Blueprint('garbage', __name__,
 
 @garbage_blue_print.route('/intelligentScale/yz', methods=['POST', 'GET'])
 def yz():
-    card_num = request.values.get('card_num')
-    imei = request.values.get('IMEI')
+    card_num = request.json.get('card_num')
+    imei = request.json.get('IMEI')
     if None in {card_num, imei}:
         return jsonify(
             {'code': 0}
