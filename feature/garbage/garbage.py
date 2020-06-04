@@ -1,4 +1,5 @@
 import os
+import time
 
 from flask import Blueprint, jsonify, request
 
@@ -12,11 +13,13 @@ garbage_blue_print = Blueprint('garbage', __name__,
 def yz():
     card_num = request.json.get('card_num')
     imei = request.json.get('IMEI')
+    print('card_num:{}'.format(card_num))
+    print('imei:{}'.format(imei))
     if None in {card_num, imei}:
         return jsonify(
             {'code': 0}
         )
-
+    time.sleep(2)
     return jsonify({
         'code': 1,
         'access_token': 12345678,
