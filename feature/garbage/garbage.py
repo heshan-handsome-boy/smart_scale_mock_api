@@ -47,5 +47,6 @@ def xl():
     photo.save(file_path)
 
     return jsonify({
-        'success': 1
+        'success': 1,
+        'msg': '上传成功'
     })
