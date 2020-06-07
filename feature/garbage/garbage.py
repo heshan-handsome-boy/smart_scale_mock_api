@@ -31,22 +31,24 @@ def yz():
 @garbage_blue_print.route('/intelligentScale/xl', methods=['POST'])
 def xl():
     basedir = os.path.abspath(os.path.dirname(__file__))
-
     access_token = request.values.get('access_token')
     card_num = request.values.get('card_num')
     imei = request.values.get('IMEI')
-    btn_result = request.values.get('btn_result')
     photo = request.files.get('photo')
-    if None in {access_token, card_num, imei, btn_result, photo}:
+    weight = request.values.get('weight')
+    btn_result = request.values.get('btn_result')
+    if None in {access_token, card_num, imei, photo, weight, btn_result}:
         return jsonify({
-            'success': 0
+            'code': 0,
+            'msg': '错误信息'
         })
 
+    time.sleep(2)
     path = basedir + "/static/photo/"
     file_path = path + photo.filename
     photo.save(file_path)
 
     return jsonify({
-        'success': 1,
+        'code': 1,
         'msg': '上传成功'
     })
