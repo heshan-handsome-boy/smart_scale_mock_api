@@ -19,7 +19,7 @@ def yz():
         return jsonify(
             {'code': 0}
         )
-    time.sleep(2)
+    # time.sleep(2)
     return jsonify({
         'code': 1,
         'access_token': 12345678,
@@ -31,19 +31,20 @@ def yz():
 @garbage_blue_print.route('/intelligentScale/sjsb', methods=['POST'])
 def xl():
     basedir = os.path.abspath(os.path.dirname(__file__))
-    access_token = request.values.get('access_token')
-    card_num = request.values.get('card_num')
-    imei = request.values.get('IMEI')
-    photo = request.files.get('photo')
-    weight = request.values.get('weight')
-    btn_result = request.values.get('btn_result')
+    json_data = request.json
+    access_token = json_data.get('access_token')
+    card_num = json_data.get('card_num')
+    imei = json_data.get('IMEI')
+    photo = json_data.get('photo')
+    weight = json_data.get('weight')
+    btn_result = json_data.get('btnResult')
     if None in {access_token, card_num, imei, photo, weight, btn_result}:
         return jsonify({
             'code': 0,
             'msg': '错误信息'
         })
 
-    time.sleep(2)
+    # time.sleep(2)
     path = basedir + "/static/photo/"
     file_path = path + photo.filename
     photo.save(file_path)
