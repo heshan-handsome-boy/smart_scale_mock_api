@@ -9,7 +9,7 @@ garbage_blue_print = Blueprint('garbage', __name__,
                                )
 
 
-@garbage_blue_print.route('/intelligentScale/yz', methods=['POST', 'GET'])
+@garbage_blue_print.route('/intelligentScale/khyz', methods=['POST', 'GET'])
 def yz():
     card_num = request.json.get('card_num')
     imei = request.json.get('IMEI')
@@ -28,7 +28,7 @@ def yz():
     })
 
 
-@garbage_blue_print.route('/intelligentScale/xl', methods=['POST'])
+@garbage_blue_print.route('/intelligentScale/sjsb', methods=['POST'])
 def xl():
     basedir = os.path.abspath(os.path.dirname(__file__))
     access_token = request.values.get('access_token')
