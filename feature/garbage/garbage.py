@@ -43,11 +43,11 @@ def xl():
             'code': 0,
             'msg': '错误信息'
         })
-
+    print('✅✅btn_result: {}'.format(btn_result))
     # time.sleep(2)
-    path = basedir + "/static/photo/"
-    file_path = path + photo.filename
-    photo.save(file_path)
+    # path = basedir + "/static/photo/photo.png"
+    # file_path = path + photo.filename
+    # photo.save(path)
 
     return jsonify({
         'code': 1,
