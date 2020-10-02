@@ -44,6 +44,7 @@ def xl():
             'msg': '错误信息'
         })
     print('✅✅btn_result: {}'.format(btn_result))
+    print('✅✅photo: {}'.format(photo))
     # time.sleep(2)
     # path = basedir + "/static/photo/photo.png"
     # file_path = path + photo.filename
